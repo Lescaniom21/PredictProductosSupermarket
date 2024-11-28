@@ -1,0 +1,81 @@
+
+  /* Contenedor Principal */
+  .container {
+    text-align: center;
+  }
+  
+  /* Título */
+  h2 {
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* Estilos del Contenedor del Formulario */
+  .form-container {
+    background-color: #ac74bf;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Texto del Formulario */
+  .form-container p {
+    color: #ffffff;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos de los Campos del Formulario */
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #ECDCF1;
+    color: #442447;
+  }
+  
+  form input::placeholder,
+  form textarea::placeholder {
+    color: gray;
+  }
+  
+  /* Estilos del Botón de Enviar */
+  form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #9c57b3;
+    border: 1px solid #442447;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #442447;
+    color: white
+  }
+
+  .titulo{
+    color: #442447;
+  }
+
+   /* Estilo del mensaje de confirmación */
+   .confirmation-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8e8e8;
+    border-left: 4px solid #442447;
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 16px;
+    display: none; /* Ocultar por defecto */
+}
+  
