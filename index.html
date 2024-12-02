@@ -16,6 +16,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">   
     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
 
@@ -32,16 +35,19 @@
                       <a class="nav-link texto_nav fw-bold" href="index.html">Inicio</a>
                   </li>
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="#aboutMe">Productos</a>
+                      <a class="nav-link texto_nav fw-bold" href="productos.html">Productos</a>
                   </li>
                   <li class="nav-item me-3">
-                    <a class="nav-link texto_nav fw-bold" href="#aboutMe">Predicciones</a>
+                    <a class="nav-link texto_nav fw-bold" href="predicciones.html">Predicciones</a>
                   </li>
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="habilidades.html">Clientes</a>
+                      <a class="nav-link texto_nav fw-bold" href="#">Clientes</a>
                   </li>
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="#formacion">Configuración</a>
+                    <a class="nav-link texto_nav fw-bold d-flex align-items-center" href="login.html">
+                        <span class="material-icons me-1">login</span> 
+                        <span>Cerrar sesión</span>
+                    </a>
                   </li>
                   
               </ul>
@@ -91,42 +97,48 @@
 
     <section id="noticias">
       <div class="container-fluid">
-        <br>
-        <h2 class="fw-bold tituloC" style="text-align: center;">Noticias Relevantes</h2>
-        <br>
-        <div class="row d-flex justify-content-center align-items-start">
-            
-
-          <div class="card mb-4 col-md-4 cartita">
-            <img src="IMG/envy360.png" class="card-img-top" alt="Imagen de la PC">
-            <div class="card-body">
-                <h5 class="card-title tituloCA">La mejor PC para cursar Ingeniería en sistemas computacionales</h5>
-                <br>
-                <a href="https://www.amazon.com/HP-Envy-x360-procesador-retroiluminado/dp/B0CVNZ6T2X/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.sQvnW2Pn8xN5XHbjEFH6HRUrD-fmwEsFz3cL7iHQbzZrxxWHbzifKvtlW4PPToqM_TYoOAlzxV4wedURw7graTATEnZZeMvMqGuqrE4AP_2ITS1huuGuzIsRStFi5Y129T8FIyZ7W7nsl-7Li_IZTESS4BxBcnFNGjFp8WUYNFgNYypux0N-KBjo1U07F44fH2Uh5ikM82STwqm1hK7zfWAZuAcgiGz3eoQNcoO16dA.yWFJ-3w37AZH33mu665cqwSsgiQScXzFcDetZuPq3CE&dib_tag=se&keywords=HP%2BEnvy%2Bx360&qid=1731036303&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank" class="btn btn_p">
-                    Ver en Amazon
-                </a>
-                
-            </div>
+          <br>
+          <h2 class="fw-bold tituloC text-center">Productos más vendidos</h2>
+          <br>
+          <div class="row d-flex justify-content-center">
+              <div class="col-md-10">
+                  <div class="card card-table">
+                      <table class="table table-striped text-center">
+                          <thead>
+                              <tr>
+                                  <th>Nombre del Producto</th>
+                                  <th>Descripción</th>
+                                  <th>Categoría</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Arroz Premium</td>
+                                  <td>Arroz de calidad superior, ideal para cualquier ocasión.</td>
+                                  <td>Granos</td>
+                              </tr>
+                              <tr>
+                                  <td>Detergente Multiusos</td>
+                                  <td>Limpieza profunda con aroma fresco y duradero.</td>
+                                  <td>Limpieza</td>
+                              </tr>
+                              <tr>
+                                  <td>Leche Entera</td>
+                                  <td>Leche fresca, rica en calcio y vitaminas.</td>
+                                  <td>Lácteos</td>
+                              </tr>
+                              <tr>
+                                  <td>Galletas de Chocolate</td>
+                                  <td>Deliciosas galletas con chips de chocolate.</td>
+                                  <td>Snacks</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
           </div>
-
-          <div class="card mb-4 col-md-4 cartita">
-            <img src="IMG/libroPython.jpg" class="card-img-top" alt="Imagen de la PC">
-            <div class="card-body">
-                <h5 class="card-title tituloCA">El mejor libro para leer y aprender a programar en python</h5>
-                <br>
-                <a href="https://www.amazon.com/Python-Programming-Hands-Step-Step/dp/B0CSP19YF2/ref=sr_1_26_sspa?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HNXQUSTRPL8R&dib=eyJ2IjoiMSJ9.HNOVza3hvqBK732ax3pYn54Wc7NDRWn7TUsDF-KDV-NLBDIkgA8zEJe6H2piinkCTrxxviXIMWuLQyvi58M1WT_Swr-xqokRfG2IJ5ID7FdVuNqLQZHAVAlGYebGEqYcULw5IY5wl1YREKG2D96i5qA96HdvgZfTytejqHF3LmqX6ibHW4pt_R_RUktAFKPxmF8T7_8qc5wtuw5AUUWKS7v9S3g8ytD7RMdi3MuL-oNOV_-NhJm_Kk0hRa_ZLBWab_jD_u6AkFe1KpBOHcnzkuqdbI2EQuAWB0J0pqhuSAU.QGOBBcOY6R7zVLokgmVEeCfSNEhhRPJDz_wuo9ChGuY&dib_tag=se&keywords=programacion&qid=1731037427&sprefix=programacion+%2Caps%2C164&sr=8-26-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1" target="_blank" class="btn btn_p">
-                    Ver en Amazon
-                </a>
-                
-            </div>
-          </div>
-            
-      
-            
-          
-        </div>
-    </div>
-    <br>
+      </div>
+      <br>
   </section>
   
 

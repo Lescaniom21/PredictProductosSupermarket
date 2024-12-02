@@ -43,6 +43,7 @@
                   <li class="nav-item me-3">
                       <a class="nav-link texto_nav fw-bold" href="#">Clientes</a>
                   </li>
+                  
                   <li class="nav-item me-3">
                     <a class="nav-link texto_nav fw-bold d-flex align-items-center" href="login.html">
                         <span class="material-icons me-1">login</span> 
@@ -66,20 +67,58 @@
     <br>
     <div class="container my-5">
         <div class="row align-items-center">
-          
-        
-          <!-- Columna de Texto -->
-          <div class="col-lg-12">
-              
-              <h1 class="fw-bold display-6">Sistema de Predicción de un Supermercado</h1>
-              <h3 class="mb-2">Productos del Supermercado</h3>
-              
-              <div class="mt-4" style="align-items: right;">
-                <a href="PDF/CV - Laura Escanio.pdf" class="btn botoncito btn-outline-light me-2 px-4 py-2">OBTENER INFORME</a>
-                <a href="contactos.html" class="btn btn-outline-light px-4 py-2">GRAFICOS</a>
-              </div>
-          </div>
-          
+            <div class="col-lg-12">
+                <h1 class="fw-bold display-6">Sistema de Predicción de un Supermercado</h1>
+                <h3 class="mb-2">Formulario de Predicción</h3>
+
+                <form id="prediction-form" class="mt-4">
+                    <!-- Primera fila: Nombre y Sexo -->
+                    <div class="row mb-3">
+                        <div class="col-md-8">
+                            <label for="nombreCliente" class="form-label">Nombre del Cliente</label>
+                            <input type="text" class="form-control" id="nombreCliente" placeholder="Ingrese su nombre" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" id="sexo" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Segunda fila: Género, Edad y Categoría -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="genero" class="form-label">Género</label>
+                            <select class="form-select" id="genero" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                                <option value="cisgenero">Cisgénero</option>
+                                <option value="transgenero">Transgénero</option>
+                                <option value="no_binario">No Binario</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edad" placeholder="Ingrese su edad" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="categoria" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria" required>
+                                <option value="" selected disabled>Seleccione una opción</option>
+                                <option value="cliente_frecuente">Cliente Frecuente</option>
+                                <option value="cliente_nuevo">Cliente Nuevo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn_p botonP fw-bold">Predecir</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
