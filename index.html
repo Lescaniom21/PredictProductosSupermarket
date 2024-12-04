@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="CSS/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estilos.css') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">   
     
@@ -95,51 +95,44 @@
 
     <br>
 
+    
+    
+    
     <section id="noticias">
-      <div class="container-fluid">
-          <br>
-          <h2 class="fw-bold tituloC text-center">Productos más vendidos</h2>
-          <br>
-          <div class="row d-flex justify-content-center">
-              <div class="col-md-10">
-                  <div class="card card-table">
-                      <table class="table table-striped text-center">
-                          <thead>
-                              <tr>
-                                  <th>Nombre del Producto</th>
-                                  <th>Descripción</th>
-                                  <th>Categoría</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>Arroz Premium</td>
-                                  <td>Arroz de calidad superior, ideal para cualquier ocasión.</td>
-                                  <td>Granos</td>
-                              </tr>
-                              <tr>
-                                  <td>Detergente Multiusos</td>
-                                  <td>Limpieza profunda con aroma fresco y duradero.</td>
-                                  <td>Limpieza</td>
-                              </tr>
-                              <tr>
-                                  <td>Leche Entera</td>
-                                  <td>Leche fresca, rica en calcio y vitaminas.</td>
-                                  <td>Lácteos</td>
-                              </tr>
-                              <tr>
-                                  <td>Galletas de Chocolate</td>
-                                  <td>Deliciosas galletas con chips de chocolate.</td>
-                                  <td>Snacks</td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <br>
-  </section>
+        <div class="container-fluid">
+            <br>
+            <h2 class="fw-bold tituloC text-center">Productos más vendidos</h2>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <div class="card card-table">
+                        <table class="table table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Producto</th>
+                                    <th>Descripción</th>
+                                    <th>Categoría</th>
+                                    <th>Total Vendidos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos %}
+                                <tr>
+                                    <td>{{ producto[0] }}</td>
+                                    <td>{{ producto[1] }}</td>
+                                    <td>{{ producto[2] }}</td>
+                                    <td>{{ producto[3] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+
   
 
   <!-- Footer -->

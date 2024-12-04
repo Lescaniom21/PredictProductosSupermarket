@@ -1,42 +1,47 @@
+from flask import Flask, render_template
 import pyodbc
+import os
 
-# Parámetros de conexión
-server = 'LSCANIOM21'  # Nombre de tu servidor
-database = 'Supermercado'  # Nombre de tu base de datos
+# Crear la app Flask, especificando la carpeta actual como la carpeta de plantillas
+app = Flask(__name__,
+            template_folder=os.getcwd(),  # Carpeta donde están las plantillas HTML
+            static_folder=os.getcwd())    # Carpeta donde están los archivos estáticos (CSS, JS, IMG)
 
-# Conexión usando autenticación de Windows
-conn = pyodbc.connect(
-    f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};Trusted_Connection=yes;'
-)
+# Parámetros de conexión a la base de datos
+server = 'LSCANIOM21'
+database = 'Supermercado'
 
-# Crear un cursor para ejecutar las consultas
-cursor = conn.cursor()
+@app.route('/')  # Ruta principal que servirá el archivo index.html
+def productos_mas_vendidos():
+    # Conectar a la base de datos
+    conn = pyodbc.connect(
+        f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};Trusted_Connection=yes;'
+    )
+    cursor = conn.cursor()
 
-# Consulta para obtener los 10 productos más vendidos
-query = '''
-SELECT TOP 5
-    p.Nombre AS NombreProducto,
-    p.Descripcion AS DescripcionProducto,
-    cp.Nombre AS Categoria,
-    SUM(hf.Cantidad) AS TotalVendidos
-FROM HistorialFactura hf
-JOIN Producto p ON hf.ProductoID = p.ProductoID
-JOIN CategoriaProducto cp ON p.CategoriaID = cp.CategoriaID
-GROUP BY p.Nombre, p.Descripcion, cp.Nombre
-ORDER BY TotalVendidos DESC;
-'''
+    # Consulta SQL para obtener los 10 productos más vendidos
+    query = '''
+    SELECT TOP 10
+        p.Nombre AS NombreProducto,
+        p.Descripcion AS DescripcionProducto,
+        cp.Nombre AS Categoria,
+        SUM(hf.Cantidad) AS TotalVendidos
+    FROM HistorialFactura hf
+    JOIN Producto p ON hf.ProductoID = p.ProductoID
+    JOIN CategoriaProducto cp ON p.CategoriaID = cp.CategoriaID
+    GROUP BY p.Nombre, p.Descripcion, cp.Nombre
+    ORDER BY TotalVendidos DESC;
+    '''
 
-# Ejecutar la consulta
-cursor.execute(query)
+    # Ejecutar la consulta
+    cursor.execute(query)
+    productos = cursor.fetchall()
 
-# Obtener los resultados
-productos = cursor.fetchall()
+    # Cerrar la conexión
+    conn.close()
 
-# Mostrar los resultados en el orden solicitado
-print("Nombre del Producto | Descripción | Categoría | Total Vendidos")
-print("-" * 70)
-for producto in productos:
-    print(f"{producto.NombreProducto} | {producto.DescripcionProducto} | {producto.Categoria} | {producto.TotalVendidos}")
+    # Pasar los datos a la plantilla (index.html)
+    return render_template('index.html', productos=productos)
 
-# Cerrar la conexión
-conn.close()
+if __name__ == '__main__':
+    app.run(debug=True)
