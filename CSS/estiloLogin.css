@@ -27,3 +27,13 @@ body {
     height: auto;
    
 }
+
+.btn-primaryLau{
+    background-color: #34699b;
+    color: white;
+}
+
+.btn-primaryLau:hover{
+    background-color: #34699b;
+    color: white;
+}

@@ -14,18 +14,19 @@
                 <img src="IMG/logo.png" alt="Logo de la Tienda" class="logo">
             </div>
             <div class="card-body">
-                <h5 class="text-center mb-4">Iniciar Sesión</h5>
+                <h5 class="text-center mb-4 fw-bold">Inicio de Sesión</h5>
+                
                 <form id="loginForm">
                     <div class="mb-3">
                         <label for="username" class="form-label">Nombre de Usuario</label>
-                        <input type="text" id="username" class="form-control" required>
+                        <input type="text" id="username" class="form-control" placeholder="Ingrese nombre de usuario" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" id="password" class="form-control" required>
+                        <input type="password" id="password" class="form-control" placeholder="Ingrese contraseña" required>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primaryLau fw-bold">Iniciar Sesión</button>
                     </div>
                 </form>
             </div>
@@ -37,13 +38,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Error</h5>
+                    <h5 class="modal-title" id="modalLabel">Acceso Denegado</h5>
                 </div>
                 <div class="modal-body">
                     Usuario o contraseña incorrectos. Por favor, inténtelo nuevamente.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="retryBtn">Intentar Nuevamente</button>
+                    <button type="button" class="btn btn-primaryLau" id="retryBtn">Intentar Nuevamente</button>
                 </div>
             </div>
         </div>

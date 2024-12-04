@@ -104,7 +104,7 @@ body {
 
 .profile-img {
     padding: 20px;
-    max-width: 450px;
+    max-width: 150px;
     margin: 0 auto;
 }
 
@@ -312,62 +312,34 @@ h2 {
 }
 
 
-
-
 .footer {
     background-color: #34699b;
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
+    text-align: justify;
     color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
 .footer-container {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding-left: 10px; /* Este margen ya está agregado */
 }
 
-.social-icons {
-    margin-bottom: 15px;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: #ac74bf;
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    background-color: #34699b;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-}
-
-.linkedin { color: #0a66c2; }
-.github { color: #333333; }
-.instagram { color: #c32aa3; }
-.gmail { color: #d93025; }
-
-.linkedin:hover,
-.github:hover,
-.instagram:hover,
-.gmail:hover {
-    color: #ffffff;
+.footer-container .d-flex {
+    margin-left: 10px; /* Para asegurar margen izquierdo en el contenido dentro de d-flex */
 }
 
 .copyright {
     font-size: 0.9em;
     color: #ffffff;
     margin-top: 10px;
+}
+
+.footer-text {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
 }
 
 .iframeContainer {
@@ -538,6 +510,10 @@ h2 {
 
 #privacyModalLau{
     color:#442447;
+}
+
+.tituloModal{
+    color:#ffffff;
 }
 
 #privacyModal{
