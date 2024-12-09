@@ -11,7 +11,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     if (username === "admin" && password === "admin") {
         alert("Inicio de sesión exitoso");
-        window.location.href = "index.html"; 
+        window.location.href = "http://127.0.0.1:5001/"; 
         
     } else {
         attempts++;

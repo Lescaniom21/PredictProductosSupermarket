@@ -622,3 +622,10 @@ tr:nth-child(even) {
     background-color: #ffffff;
     margin-top: 1rem;
 }
+
+#cardColapsada{
+    align-items: center;
+    margin: 40px;
+    padding: 10px;
+    align-content: center;
+}

@@ -32,19 +32,17 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto">
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="index.html">Inicio</a>
+                      <a class="nav-link texto_nav fw-bold" href="http://127.0.0.1:5001/">Inicio</a>
                   </li>
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="productos.html">Productos</a>
+                      <a class="nav-link texto_nav fw-bold" href="http://127.0.0.1:5001/ProyectoFinal/productos.html">Productos</a>
                   </li>
                   <li class="nav-item me-3">
-                    <a class="nav-link texto_nav fw-bold" href="predicciones.html">Predicciones</a>
+                    <a class="nav-link texto_nav fw-bold" href="http://127.0.0.1:5001/ProyectoFinal/predicciones.html">Predicciones</a>
                   </li>
+                  
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="#">Clientes</a>
-                  </li>
-                  <li class="nav-item me-3">
-                    <a class="nav-link texto_nav fw-bold d-flex align-items-center" href="login.html">
+                    <a class="nav-link texto_nav fw-bold d-flex align-items-center" href="http://127.0.0.1:5001/ProyectoFinal/login.html">
                         <span class="material-icons me-1">login</span> 
                         <span>Cerrar sesión</span>
                     </a>
@@ -54,14 +52,8 @@
           </div>
       </div>
     </nav>
-  
-  
-      
-      
 
     <br>
-
-    
 
     <br>
     <div class="container my-5">
@@ -74,81 +66,114 @@
               <h1 class="fw-bold display-6">Sistema de Predicción de un Supermercado</h1>
               <h3 class="mb-2">Productos del Supermercado</h3>
               
-              <div class="mt-4" style="align-items: right;">
-                <a href="PDF/CV - Laura Escanio.pdf" class="btn botoncito btn-outline-light me-2 px-4 py-2">OBTENER INFORME</a>
-                <a href="contactos.html" class="btn btn-outline-light px-4 py-2">GRAFICOS</a>
-              </div>
+              
           </div>
           
         </div>
     </div>
+    
 
-    <br>
 
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card card-table">
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del Producto</th>
+                            <th>Descripción</th>
+                            <th>Categoría</th>
+                            <th>Total Vendidos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-productos">
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-        <div class="d-flex align-items-center">
-            <img class="profile-img me-3" src="IMG/logo.png" alt="Logo del Sistema">
-            <div>
-                <p class="footer-text mb-0">
-                    Sistema de predicción de los próximos productos que comprará un cliente en un supermercado.
-                </p>
-                <p class="copyright tituloC mb-0">
-                    © 2024 Laura Escanio. Todos los derechos reservados. Para más información leer nuestras 
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" id="privacyModalLau"><strong>Políticas de Privacidad</strong></a>
-                </p>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
-    
-
-    <!-- Modal de Políticas de Privacidad -->
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title fw-bold tituloModal" id="privacyModalLabel">Políticas de Privacidad</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body modalLetras">
-                  <p>Tu privacidad es importante para nosotros. En este portafolio, respetamos y protegemos tu información. A continuación, te presentamos nuestras políticas de privacidad:</p>
-                  <ul>
-                      <li><strong>Recolección de Datos:</strong> Este sitio no recopila datos personales sin tu consentimiento.</li>
-                      <li><strong>Uso de la Información:</strong> La información que proporciones será utilizada exclusivamente para fines de comunicación relacionados con este portafolio.</li>
-                      <li><strong>Cookies:</strong> Actualmente, este sitio no utiliza cookies para rastrear tu actividad.</li>
-                      <li><strong>Enlaces Externos:</strong> Nuestro portafolio puede incluir enlaces a otros sitios. No somos responsables de las políticas de privacidad de dichos sitios.</li>
-                      <li><strong>Actualización de Políticas:</strong> Estas políticas pueden cambiar con el tiempo. Te recomendamos revisarlas periódicamente.</li>
-                  </ul>
-                  <p>Si tienes alguna pregunta sobre nuestras políticas de privacidad, no dudes en ponerte en contacto.</p>
-                  <a href="mailto:le21-0146@unphu.edu.do?subject=Consulta%20desde%20tu%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20proyectos." class="fw-bold tituloC">Contáctame</a>
-
-                  
-
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn_p" data-bs-dismiss="modal">Aceptar</button>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
+    <br>
 
 
-<!-- Font Awesome Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="d-flex align-items-center">
+                <img class="profile-img me-3" src="IMG/logo.png" alt="Logo del Sistema">
+                <div>
+                    <p class="footer-text mb-0">
+                        Sistema de predicción de los próximos productos que comprará un cliente en un supermercado.
+                    </p>
+                    <p class="copyright tituloC mb-0">
+                        © 2024 Proyecto de Simulación de Sistemas. Todos los derechos reservados. Para más información leer nuestras 
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" id="privacyModalLau"><strong>Políticas de Privacidad</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-<script src="JS/file.js"></script>
+        <!-- Modal de Políticas de Privacidad -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold tituloModal" id="privacyModalLabel">Políticas de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modalLetras">
+                    <p>Tu privacidad es importante para nosotros. En este portafolio, respetamos y protegemos tu información. A continuación, te presentamos nuestras políticas de privacidad:</p>
+                    <ul>
+                        <li><strong>Recolección de Datos:</strong> Este sitio no recopila datos personales sin tu consentimiento.</li>
+                        <li><strong>Uso de la Información:</strong> La información que proporciones será utilizada exclusivamente para fines de comunicación relacionados con este portafolio.</li>
+                        <li><strong>Cookies:</strong> Actualmente, este sitio no utiliza cookies para rastrear tu actividad.</li>
+                        <li><strong>Enlaces Externos:</strong> Nuestro portafolio puede incluir enlaces a otros sitios. No somos responsables de las políticas de privacidad de dichos sitios.</li>
+                        <li><strong>Actualización de Políticas:</strong> Estas políticas pueden cambiar con el tiempo. Te recomendamos revisarlas periódicamente.</li>
+                    </ul>
+                    <p>Si tienes alguna pregunta sobre nuestras políticas de privacidad, no dudes en ponerte en contacto.</p>
+                    <a href="mailto:le21-0146@unphu.edu.do?subject=Consulta%20desde%20tu%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20proyectos." class="fw-bold tituloC">Contáctame</a>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn_p" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <!-- Font Awesome Icons -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const tbody = document.getElementById('tabla-productos');
+          
+          // Asegúrate de que la URL coincida con el host/puerto donde corre Flask
+          fetch('http://127.0.0.1:5001/api/productos_mas_vendidos')
+            .then(response => response.json())
+            .then(data => {
+              data.forEach(producto => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                  <td>${producto.ID}</td>
+                  <td>${producto.NombreProducto}</td>
+                  <td>${producto.DescripcionProducto}</td>
+                  <td>${producto.Categoria}</td>
+                  <td>${producto.TotalVendidos}</td>
+                `;
+                tbody.appendChild(fila);
+              });
+            })
+            .catch(error => console.error('Error al obtener datos:', error));
+        });
+    </script>
+      
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="JS/file.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
 </html>
-  
-  
-  
-  
+    
