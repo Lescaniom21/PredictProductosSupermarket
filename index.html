@@ -7,21 +7,22 @@
     <meta name="keywords" content="portafolio, trabajo, frontend, programación, software, base de datos, creación de marcas, diseño gráfico, diseño de páginas web">
     <meta name="author" content="Laura Escanio">
     <title>Laura Escanio</title>
-    <link rel="icon" href="IMG/logo.png" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='IMG/logo.png') }}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estilos.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">   
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
 
     <nav class="navbar_estilos navbar navbar-expand-lg">
       <div class="container-fluid">
-          <img class="imgMenu" src="IMG/logo.png" alt="Logo">
+          <img class="imgMenu" src="{{ url_for('static', filename='IMG/logo.png') }}" alt="Logo">
           <a class="navbar-brand texto_nav fw-bold" href="#inicio"></a>
           <button class="navbar-toggler" type="button" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -29,19 +30,20 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto">
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="index.html">Inicio</a>
+                      <a class="nav-link texto_nav fw-bold" href="http://127.0.0.1:5001/">Inicio</a>
                   </li>
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="#aboutMe">Productos</a>
+                      <a class="nav-link texto_nav fw-bold" href="{{ url_for('static', filename='productos.html') }}">Productos</a>
                   </li>
                   <li class="nav-item me-3">
-                    <a class="nav-link texto_nav fw-bold" href="#aboutMe">Predicciones</a>
+                    <a class="nav-link texto_nav fw-bold" href="{{ url_for('static', filename='predicciones.html') }}">Predicciones</a>
                   </li>
+                  
                   <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="habilidades.html">Clientes</a>
-                  </li>
-                  <li class="nav-item me-3">
-                      <a class="nav-link texto_nav fw-bold" href="#formacion">Configuración</a>
+                    <a class="nav-link texto_nav fw-bold d-flex align-items-center" href="{{ url_for('static', filename='login.html') }}">
+                        <span class="material-icons me-1">login</span> 
+                        <span>Cerrar sesión</span>
+                    </a>
                   </li>
                   
               </ul>
@@ -49,22 +51,14 @@
       </div>
     </nav>
   
-  
-      
-      
-
     <br>
-
-    
-
     <br>
     <div class="container my-5">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <img src="http://localhost:5000/grafico" class="img-fluid" alt="Ventas Semanales">
-        </div>
+            <canvas id="productosChart" width="400" height="200"></canvas>
+          </div>
         
-          <!-- Columna de Texto -->
           <div class="col-lg-6">
               <h3 class="mb-2">Bienvenido/a</h3>
               <h1 class="fw-bold display-6">Sistema de Predicción de un Supermercado</h1>
@@ -79,124 +73,124 @@
                 comerciales.
               </p>
               <div class="mt-4">
-              <a href="PDF/CV - Laura Escanio.pdf" class="btn botoncito btn-outline-light me-2 px-4 py-2">OBTENER INFORME</a>
-              <a href="contactos.html" class="btn btn-outline-light px-4 py-2">GRAFICOS</a>
+                <a href="{{ url_for('static', filename='predicciones.html') }}" class="btn btn-outline-light px-4 py-2">EMPEZAR A PREDECIR</a>
               </div>
           </div>
-          
         </div>
     </div>
 
     <br>
 
     <section id="noticias">
-      <div class="container-fluid">
-        <br>
-        <h2 class="fw-bold tituloC" style="text-align: center;">Noticias Relevantes</h2>
-        <br>
-        <div class="row d-flex justify-content-center align-items-start">
-            
-
-          <div class="card mb-4 col-md-4 cartita">
-            <img src="IMG/envy360.png" class="card-img-top" alt="Imagen de la PC">
-            <div class="card-body">
-                <h5 class="card-title tituloCA">La mejor PC para cursar Ingeniería en sistemas computacionales</h5>
-                <br>
-                <a href="https://www.amazon.com/HP-Envy-x360-procesador-retroiluminado/dp/B0CVNZ6T2X/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.sQvnW2Pn8xN5XHbjEFH6HRUrD-fmwEsFz3cL7iHQbzZrxxWHbzifKvtlW4PPToqM_TYoOAlzxV4wedURw7graTATEnZZeMvMqGuqrE4AP_2ITS1huuGuzIsRStFi5Y129T8FIyZ7W7nsl-7Li_IZTESS4BxBcnFNGjFp8WUYNFgNYypux0N-KBjo1U07F44fH2Uh5ikM82STwqm1hK7zfWAZuAcgiGz3eoQNcoO16dA.yWFJ-3w37AZH33mu665cqwSsgiQScXzFcDetZuPq3CE&dib_tag=se&keywords=HP%2BEnvy%2Bx360&qid=1731036303&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank" class="btn btn_p">
-                    Ver en Amazon
-                </a>
-                
+        <div class="container-fluid">
+            <br>
+            <h2 class="fw-bold tituloC text-center">Productos más vendidos</h2>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+                    <div class="card card-table">
+                        <table class="table table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre del Producto</th>
+                                    <th>Descripción</th>
+                                    <th>Categoría</th>
+                                    <th>Total Vendidos</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-productos">
+                                <!-- Aquí se insertarán las filas mediante JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="card mb-4 col-md-4 cartita">
-            <img src="IMG/libroPython.jpg" class="card-img-top" alt="Imagen de la PC">
-            <div class="card-body">
-                <h5 class="card-title tituloCA">El mejor libro para leer y aprender a programar en python</h5>
-                <br>
-                <a href="https://www.amazon.com/Python-Programming-Hands-Step-Step/dp/B0CSP19YF2/ref=sr_1_26_sspa?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HNXQUSTRPL8R&dib=eyJ2IjoiMSJ9.HNOVza3hvqBK732ax3pYn54Wc7NDRWn7TUsDF-KDV-NLBDIkgA8zEJe6H2piinkCTrxxviXIMWuLQyvi58M1WT_Swr-xqokRfG2IJ5ID7FdVuNqLQZHAVAlGYebGEqYcULw5IY5wl1YREKG2D96i5qA96HdvgZfTytejqHF3LmqX6ibHW4pt_R_RUktAFKPxmF8T7_8qc5wtuw5AUUWKS7v9S3g8ytD7RMdi3MuL-oNOV_-NhJm_Kk0hRa_ZLBWab_jD_u6AkFe1KpBOHcnzkuqdbI2EQuAWB0J0pqhuSAU.QGOBBcOY6R7zVLokgmVEeCfSNEhhRPJDz_wuo9ChGuY&dib_tag=se&keywords=programacion&qid=1731037427&sprefix=programacion+%2Caps%2C164&sr=8-26-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1" target="_blank" class="btn btn_p">
-                    Ver en Amazon
-                </a>
-                
-            </div>
-          </div>
-            
-      
-            
-          
         </div>
-    </div>
-    <br>
-  </section>
-  
+        <br>
+        <br>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/laura-e-escanio-molina-503091284/" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/Lescaniom21?tab=overview&from=2024-11-01&to=2024-11-05" target="_blank" class="social-icon github" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.instagram.com/laura_escanio/" target="_blank" class="social-icon instagram" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-        </a>
-        <a href="mailto:le21-0146@unphu.edu.do" class="social-icon gmail" aria-label="Gmail">
-        <i class="fas fa-envelope"></i>
-        </a>
-    </div>
-    <p class="copyright tituloC">© 2024 Laura Escanio. Todos los derechos reservados. Para más información leer nuestras <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" id="privacyModalLau"><strong>Políticas de Privacidad</strong></a></p>
-    
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="d-flex align-items-center">
+                <img class="profile-img me-3" src="{{ url_for('static', filename='IMG/logo.png') }}" alt="Logo del Sistema">
+                <div>
+                    <p class="footer-text mb-0">
+                        Sistema de predicción de los próximos productos que comprará un cliente en un supermercado.
+                    </p>
+                    <p class="copyright tituloC mb-0">
+                        © 2024 Proyecto de Simulación de Sistemas. Todos los derechos reservados. Para más información leer nuestras 
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" id="privacyModalLau"><strong>Políticas de Privacidad</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    
-
-    <!-- Modal de Políticas de Privacidad -->
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title fw-bold" id="privacyModalLabel">Políticas de Privacidad</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body modalLetras">
-                  <p>Tu privacidad es importante para nosotros. En este portafolio, respetamos y protegemos tu información. A continuación, te presentamos nuestras políticas de privacidad:</p>
-                  <ul>
-                      <li><strong>Recolección de Datos:</strong> Este sitio no recopila datos personales sin tu consentimiento.</li>
-                      <li><strong>Uso de la Información:</strong> La información que proporciones será utilizada exclusivamente para fines de comunicación relacionados con este portafolio.</li>
-                      <li><strong>Cookies:</strong> Actualmente, este sitio no utiliza cookies para rastrear tu actividad.</li>
-                      <li><strong>Enlaces Externos:</strong> Nuestro portafolio puede incluir enlaces a otros sitios. No somos responsables de las políticas de privacidad de dichos sitios.</li>
-                      <li><strong>Actualización de Políticas:</strong> Estas políticas pueden cambiar con el tiempo. Te recomendamos revisarlas periódicamente.</li>
-                  </ul>
-                  <p>Si tienes alguna pregunta sobre nuestras políticas de privacidad, no dudes en ponerte en contacto.</p>
-                  <a href="mailto:le21-0146@unphu.edu.do?subject=Consulta%20desde%20tu%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20proyectos." class="fw-bold tituloC">Contáctame</a>
-
-                  
-
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn_p" data-bs-dismiss="modal">Aceptar</button>
+        <!-- Modal de Políticas de Privacidad -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title fw-bold tituloModal" id="privacyModalLabel">Políticas de Privacidad</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body modalLetras">
+                      <p>Tu privacidad es importante para nosotros. En este portafolio, respetamos y protegemos tu información. A continuación, te presentamos nuestras políticas de privacidad:</p>
+                      <ul>
+                          <li><strong>Recolección de Datos:</strong> Este sitio no recopila datos personales sin tu consentimiento.</li>
+                          <li><strong>Uso de la Información:</strong> La información que proporciones será utilizada exclusivamente para fines de comunicación relacionados con este portafolio.</li>
+                          <li><strong>Cookies:</strong> Actualmente, este sitio no utiliza cookies para rastrear tu actividad.</li>
+                          <li><strong>Enlaces Externos:</strong> Nuestro portafolio puede incluir enlaces a otros sitios. No somos responsables de las políticas de privacidad de dichos sitios.</li>
+                          <li><strong>Actualización de Políticas:</strong> Estas políticas pueden cambiar con el tiempo. Te recomendamos revisarlas periódicamente.</li>
+                      </ul>
+                      <p>Si tienes alguna pregunta sobre nuestras políticas de privacidad, no dudes en ponerte en contacto.</p>
+                      <a href="mailto:le21-0146@unphu.edu.do?subject=Consulta%20desde%20tu%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20proyectos." class="fw-bold tituloC">Contáctame</a>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn_p" data-bs-dismiss="modal">Aceptar</button>
+                  </div>
               </div>
           </div>
-      </div>
-  </div>
-</footer>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='JS/file.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="{{ url_for('static', filename='JS/grafico.js') }}"></script>
 
 
-<!-- Font Awesome Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<script src="JS/file.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const tbody = document.getElementById('tabla-productos');
+        
+        // Asegúrate de que la URL coincida con el host/puerto donde corre Flask
+        fetch('http://127.0.0.1:5001/api/productos_mas_vendidos')
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(producto => {
+              const fila = document.createElement('tr');
+              fila.innerHTML = `
+                <td>${producto.ID}</td>
+                <td>${producto.NombreProducto}</td>
+                <td>${producto.DescripcionProducto}</td>
+                <td>${producto.Categoria}</td>
+                <td>${producto.TotalVendidos}</td>
+              `;
+              tbody.appendChild(fila);
+            });
+          })
+          .catch(error => console.error('Error al obtener datos:', error));
+      });
+    </script>
+  </body>
 </html>
-  
-  
-  
-  
